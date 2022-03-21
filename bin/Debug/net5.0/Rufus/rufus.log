@@ -1,0 +1,367 @@
+Rufus x86 v3.18.1877 (Portable)
+Windows version: Windows 10 Pro, 64-bit (Build 19042.1466)
+Syslinux versions: 4.07/2013-07-25, 6.04/pre1
+Grub versions: 0.4.6a, 2.06
+System locale ID: 0x0419 (ru-RU)
+Will use default UI locale 0x0419
+SetLGP: Successfully set NoDriveTypeAutorun policy to 0x0000009E
+Localization set to 'ru-RU'
+Notice: The ISO download feature has been deactivated because 'Check for updates' is disabled in your settings.
+NOTE: The Russian (Русский) translation requires an update, but the current translator hasn't submitted one. Because of this, some messages will only be displayed in English.
+If you think you can help update this translation, please e-mail the author of this application
+0 devices found
+Found USB 2.0 device 'QUMO QUMO USB Device' (8644:8003)
+Using 'autorun.inf' label for drive E: 'CDROM'
+1 device found
+Disk type: Removable, Disk size: 8 ГБ, Sector size: 512 bytes
+Cylinders: 975, Tracks per cylinder: 255, Sectors per track: 63
+Partition type: MBR, NB Partitions: 1
+Disk ID: 0x1580EA9B
+Drive has a Grub 2.0 Master Boot Record
+Partition 1:
+  Type: FAT32 LBA (0x0c)
+  Detected File System: FAT32
+  Size: 7.5 GB (8021606400 bytes)
+  Start Sector: 2048, Boot: Yes
+Scanning image...
+ISO analysis:
+  Image is an ISO9660 image
+  Detected Grub version: 2.02~beta2-9
+Disk image analysis:
+  Image does not have a Boot Marker
+ISO label: 'CDROM'
+  Size: 24.4 МБ (Projected)
+  Uses: GRUB2
+Using image: OS.iso (24.8 МБ)
+Will reuse 'core.img' from 'C:\Users\79315\Desktop\OS\bin\Debug\net5.0\Rufus\grub-2.02~beta2-9\' for Grub 2.x installation
+
+Format operation started
+Requesting disk access...
+Will use 'E:' as volume mountpoint
+Opened \\.\PhysicalDrive3 for exclusive write access
+Analyzing existing boot records...
+Drive has a Grub 2.0 Master Boot Record
+Clearing MBR/PBR/GPT structures...
+Erasing 128 sectors
+Initializing disk...
+Partitioning (MBR)...
+● Creating Main Data Partition (offset: 1048576, size: 7.5 GB)
+Waiting for logical drive to reappear...
+Formatting to FAT32 (using IFS)
+Using cluster size: 4096 bytes
+Quick format was selected
+Creating file system...
+Format completed.
+Writing Master Boot Record...
+Partition is already FAT32 LBA...
+Set bootable USB partition as 0x80
+Using Grub 2.0 MBR
+Writing Grub 2.0 SBR (from download) ✓
+Found volume \\?\Volume{2f7b0452-a92d-11ec-96d3-12c5471ea65a}\
+Notice: Volume Device Path is \Device\HarddiskVolume12
+Waiting for access on \\?\Volume{2f7b0452-a92d-11ec-96d3-12c5471ea65a}...
+Warning: Could not obtain exclusive rights. Retrying with write sharing enabled...
+WARNING: The following process(es) or service(s) are accessing \Device\HarddiskVolume12:
+● [005332] C:\Windows\Explorer.EXE (r)
+You should close these applications before attempting to reformat the drive.
+Opened \\?\Volume{2f7b0452-a92d-11ec-96d3-12c5471ea65a} for shared write access
+Writing Partition Boot Record...
+Using Standard FAT32 partition boot record
+Confirmed new volume has a primary FAT32 boot sector
+Setting primary FAT32 boot sector for boot...
+Confirmed new volume has a secondary FAT32 boot sector
+Setting secondary FAT32 boot sector for boot...
+Successfully remounted \\?\Volume{2f7b0452-a92d-11ec-96d3-12c5471ea65a}\ as E:
+Extracting files...
+Image is an ISO9660 image
+This image will be extracted using Joliet extensions (if present)
+Extracting: E:\boot\OS.bin (22.2 MB)
+Extracting: E:\boot\grub\grub.cfg (77 bytes)
+Extracting: E:\boot\grub\i386-pc\915resolution.mod (7.8 KB)
+Extracting: E:\boot\grub\i386-pc\acpi.mod (9.7 KB)
+Extracting: E:\boot\grub\i386-pc\adler32.mod (1.3 KB)
+Extracting: E:\boot\grub\i386-pc\affs.mod (5.6 KB)
+Extracting: E:\boot\grub\i386-pc\afs.mod (6.5 KB)
+Extracting: E:\boot\grub\i386-pc\ahci.mod (15 KB)
+Extracting: E:\boot\grub\i386-pc\all_video.mod (701 bytes)
+Extracting: E:\boot\grub\i386-pc\aout.mod (1 KB)
+Extracting: E:\boot\grub\i386-pc\archelp.mod (2.9 KB)
+Extracting: E:\boot\grub\i386-pc\at_keyboard.mod (4.1 KB)
+Extracting: E:\boot\grub\i386-pc\ata.mod (5.5 KB)
+Extracting: E:\boot\grub\i386-pc\backtrace.mod (1.6 KB)
+Extracting: E:\boot\grub\i386-pc\bfs.mod (7.1 KB)
+Extracting: E:\boot\grub\i386-pc\biosdisk.mod (4.6 KB)
+Extracting: E:\boot\grub\i386-pc\bitmap.mod (2.2 KB)
+Extracting: E:\boot\grub\i386-pc\bitmap_scale.mod (3.6 KB)
+Extracting: E:\boot\grub\i386-pc\blocklist.mod (2.1 KB)
+Extracting: E:\boot\grub\i386-pc\boot.mod (2.4 KB)
+Extracting: E:\boot\grub\i386-pc\bsd.mod (29.4 KB)
+Extracting: E:\boot\grub\i386-pc\btrfs.mod (14.1 KB)
+Extracting: E:\boot\grub\i386-pc\bufio.mod (2.1 KB)
+Extracting: E:\boot\grub\i386-pc\cat.mod (2.8 KB)
+Extracting: E:\boot\grub\i386-pc\cbfs.mod (3.7 KB)
+Extracting: E:\boot\grub\i386-pc\cbls.mod (3.5 KB)
+Extracting: E:\boot\grub\i386-pc\cbmemc.mod (2.3 KB)
+Extracting: E:\boot\grub\i386-pc\cbtable.mod (1 KB)
+Extracting: E:\boot\grub\i386-pc\cbtime.mod (2.5 KB)
+Extracting: E:\boot\grub\i386-pc\chain.mod (3.4 KB)
+Extracting: E:\boot\grub\i386-pc\cmdline_cat_test.mod (3.0 KB)
+Extracting: E:\boot\grub\i386-pc\cmosdump.mod (1.2 KB)
+Extracting: E:\boot\grub\i386-pc\cmostest.mod (1.8 KB)
+Extracting: E:\boot\grub\i386-pc\cmp.mod (1.9 KB)
+Extracting: E:\boot\grub\i386-pc\command.lst (3.7 KB)
+Extracting: E:\boot\grub\i386-pc\configfile.mod (2.2 KB)
+Extracting: E:\boot\grub\i386-pc\cpio.mod (2.6 KB)
+Extracting: E:\boot\grub\i386-pc\cpio_be.mod (2.7 KB)
+Extracting: E:\boot\grub\i386-pc\cpuid.mod (1.7 KB)
+Extracting: E:\boot\grub\i386-pc\crc64.mod (1.6 KB)
+Extracting: E:\boot\grub\i386-pc\crypto.lst (936 bytes)
+Extracting: E:\boot\grub\i386-pc\crypto.mod (4.8 KB)
+Extracting: E:\boot\grub\i386-pc\cryptodisk.mod (9.8 KB)
+Extracting: E:\boot\grub\i386-pc\cs5536.mod (3.8 KB)
+Extracting: E:\boot\grub\i386-pc\date.mod (2.1 KB)
+Extracting: E:\boot\grub\i386-pc\datehook.mod (1.7 KB)
+Extracting: E:\boot\grub\i386-pc\datetime.mod (1.2 KB)
+Extracting: E:\boot\grub\i386-pc\disk.mod (2.3 KB)
+Extracting: E:\boot\grub\i386-pc\diskfilter.mod (9.5 KB)
+Extracting: E:\boot\grub\i386-pc\div_test.mod (3.8 KB)
+Extracting: E:\boot\grub\i386-pc\dm_nv.mod (1.8 KB)
+Extracting: E:\boot\grub\i386-pc\drivemap.mod (5.3 KB)
+Extracting: E:\boot\grub\i386-pc\echo.mod (1.9 KB)
+Extracting: E:\boot\grub\i386-pc\efiemu.mod (23.4 KB)
+Extracting: E:\boot\grub\i386-pc\efiemu32.o (7.3 KB)
+Extracting: E:\boot\grub\i386-pc\efiemu64.o (11 KB)
+Extracting: E:\boot\grub\i386-pc\ehci.mod (15.6 KB)
+Extracting: E:\boot\grub\i386-pc\elf.mod (5.0 KB)
+Extracting: E:\boot\grub\i386-pc\eltorito.img (27.4 KB)
+Extracting: E:\boot\grub\i386-pc\eval.mod (1.4 KB)
+Extracting: E:\boot\grub\i386-pc\exfat.mod (5.4 KB)
+Extracting: E:\boot\grub\i386-pc\exfctest.mod (1.4 KB)
+Extracting: E:\boot\grub\i386-pc\ext2.mod (5.5 KB)
+Extracting: E:\boot\grub\i386-pc\extcmd.mod (4.4 KB)
+Extracting: E:\boot\grub\i386-pc\fat.mod (5.5 KB)
+Extracting: E:\boot\grub\i386-pc\file.mod (15.7 KB)
+Extracting: E:\boot\grub\i386-pc\font.mod (12.2 KB)
+Extracting: E:\boot\grub\i386-pc\freedos.mod (2.6 KB)
+Extracting: E:\boot\grub\i386-pc\fs.lst (214 bytes)
+Extracting: E:\boot\grub\i386-pc\fshelp.mod (2.5 KB)
+Extracting: E:\boot\grub\i386-pc\functional_test.mod (87.6 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_arcfour.mod (1.6 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_blowfish.mod (7.9 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_camellia.mod (33.3 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_cast5.mod (16.4 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_crc.mod (2.8 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_des.mod (18.9 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_dsa.mod (2.2 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_idea.mod (2.9 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_md4.mod (3.1 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_md5.mod (3.7 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_rfc2268.mod (2.4 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_rijndael.mod (18.6 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_rmd160.mod (7.9 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_rsa.mod (2 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_seed.mod (15.3 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_serpent.mod (15.7 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_sha1.mod (7.3 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_sha256.mod (4.2 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_sha512.mod (7.8 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_tiger.mod (12.2 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_twofish.mod (38.5 KB)
+Extracting: E:\boot\grub\i386-pc\gcry_whirlpool.mod (24.1 KB)
+Extracting: E:\boot\grub\i386-pc\gdb.mod (24.6 KB)
+Extracting: E:\boot\grub\i386-pc\geli.mod (5.7 KB)
+Extracting: E:\boot\grub\i386-pc\gettext.mod (4.8 KB)
+Extracting: E:\boot\grub\i386-pc\gfxmenu.mod (38.3 KB)
+Extracting: E:\boot\grub\i386-pc\gfxterm.mod (9.7 KB)
+Extracting: E:\boot\grub\i386-pc\gfxterm_background.mod (2.8 KB)
+Extracting: E:\boot\grub\i386-pc\gfxterm_menu.mod (4.9 KB)
+Extracting: E:\boot\grub\i386-pc\gptsync.mod (3.7 KB)
+Extracting: E:\boot\grub\i386-pc\gzio.mod (8 KB)
+Extracting: E:\boot\grub\i386-pc\halt.mod (4.2 KB)
+Extracting: E:\boot\grub\i386-pc\hashsum.mod (5.1 KB)
+Extracting: E:\boot\grub\i386-pc\hdparm.mod (7 KB)
+Extracting: E:\boot\grub\i386-pc\hello.mod (1.2 KB)
+Extracting: E:\boot\grub\i386-pc\help.mod (2.5 KB)
+Extracting: E:\boot\grub\i386-pc\hexdump.mod (3.1 KB)
+Extracting: E:\boot\grub\i386-pc\hfs.mod (7.0 KB)
+Extracting: E:\boot\grub\i386-pc\hfsplus.mod (7.4 KB)
+Extracting: E:\boot\grub\i386-pc\hfspluscomp.mod (2.9 KB)
+Extracting: E:\boot\grub\i386-pc\http.mod (5.4 KB)
+Extracting: E:\boot\grub\i386-pc\hwmatch.mod (46.2 KB)
+Extracting: E:\boot\grub\i386-pc\iorw.mod (2.8 KB)
+Extracting: E:\boot\grub\i386-pc\iso9660.mod (8.4 KB)
+Extracting: E:\boot\grub\i386-pc\jfs.mod (6 KB)
+Extracting: E:\boot\grub\i386-pc\jpeg.mod (6.1 KB)
+Extracting: E:\boot\grub\i386-pc\keylayouts.mod (4.9 KB)
+Extracting: E:\boot\grub\i386-pc\keystatus.mod (1.9 KB)
+Extracting: E:\boot\grub\i386-pc\ldm.mod (6.7 KB)
+Extracting: E:\boot\grub\i386-pc\legacy_password_test.mod (14.1 KB)
+Extracting: E:\boot\grub\i386-pc\legacycfg.mod (29.2 KB)
+Extracting: E:\boot\grub\i386-pc\linux.mod (12.8 KB)
+Extracting: E:\boot\grub\i386-pc\linux16.mod (7.7 KB)
+Extracting: E:\boot\grub\i386-pc\loadenv.mod (5.8 KB)
+Extracting: E:\boot\grub\i386-pc\loopback.mod (2.9 KB)
+Extracting: E:\boot\grub\i386-pc\ls.mod (4.0 KB)
+Extracting: E:\boot\grub\i386-pc\lsacpi.mod (4.7 KB)
+Extracting: E:\boot\grub\i386-pc\lsapm.mod (2.2 KB)
+Extracting: E:\boot\grub\i386-pc\lsmmap.mod (1.7 KB)
+Extracting: E:\boot\grub\i386-pc\lspci.mod (4.7 KB)
+Extracting: E:\boot\grub\i386-pc\luks.mod (6.5 KB)
+Extracting: E:\boot\grub\i386-pc\lvm.mod (6.6 KB)
+Extracting: E:\boot\grub\i386-pc\lzopio.mod (8.5 KB)
+Extracting: E:\boot\grub\i386-pc\macbless.mod (3.2 KB)
+Extracting: E:\boot\grub\i386-pc\macho.mod (7.3 KB)
+Extracting: E:\boot\grub\i386-pc\mda_text.mod (2.0 KB)
+Extracting: E:\boot\grub\i386-pc\mdraid09.mod (1.9 KB)
+Extracting: E:\boot\grub\i386-pc\mdraid09_be.mod (2.0 KB)
+Extracting: E:\boot\grub\i386-pc\mdraid1x.mod (1.9 KB)
+Extracting: E:\boot\grub\i386-pc\memdisk.mod (2.0 KB)
+Extracting: E:\boot\grub\i386-pc\memrw.mod (2.8 KB)
+Extracting: E:\boot\grub\i386-pc\minicmd.mod (3.4 KB)
+Extracting: E:\boot\grub\i386-pc\minix.mod (3.4 KB)
+Extracting: E:\boot\grub\i386-pc\minix2.mod (3.5 KB)
+Extracting: E:\boot\grub\i386-pc\minix2_be.mod (3.6 KB)
+Extracting: E:\boot\grub\i386-pc\minix3.mod (3.5 KB)
+Extracting: E:\boot\grub\i386-pc\minix3_be.mod (3.6 KB)
+Extracting: E:\boot\grub\i386-pc\minix_be.mod (3.6 KB)
+Extracting: E:\boot\grub\i386-pc\mmap.mod (8.3 KB)
+Extracting: E:\boot\grub\i386-pc\moddep.lst (5.1 KB)
+Extracting: E:\boot\grub\i386-pc\modinfo.sh (2.2 KB)
+Extracting: E:\boot\grub\i386-pc\morse.mod (2.3 KB)
+Extracting: E:\boot\grub\i386-pc\mpi.mod (27.2 KB)
+Extracting: E:\boot\grub\i386-pc\msdospart.mod (2.3 KB)
+Extracting: E:\boot\grub\i386-pc\multiboot.mod (12.6 KB)
+Extracting: E:\boot\grub\i386-pc\multiboot2.mod (13.0 KB)
+Extracting: E:\boot\grub\i386-pc\nativedisk.mod (4.0 KB)
+Extracting: E:\boot\grub\i386-pc\net.mod (45.5 KB)
+Extracting: E:\boot\grub\i386-pc\newc.mod (2.8 KB)
+Extracting: E:\boot\grub\i386-pc\nilfs2.mod (6.6 KB)
+Extracting: E:\boot\grub\i386-pc\normal.mod (113.2 KB)
+Extracting: E:\boot\grub\i386-pc\ntfs.mod (9.7 KB)
+Extracting: E:\boot\grub\i386-pc\ntfscomp.mod (4.2 KB)
+Extracting: E:\boot\grub\i386-pc\ntldr.mod (2.5 KB)
+Extracting: E:\boot\grub\i386-pc\odc.mod (2.7 KB)
+Extracting: E:\boot\grub\i386-pc\offsetio.mod (1.5 KB)
+Extracting: E:\boot\grub\i386-pc\ohci.mod (10.3 KB)
+Extracting: E:\boot\grub\i386-pc\part_acorn.mod (1.6 KB)
+Extracting: E:\boot\grub\i386-pc\part_amiga.mod (1.8 KB)
+Extracting: E:\boot\grub\i386-pc\part_apple.mod (2.1 KB)
+Extracting: E:\boot\grub\i386-pc\part_bsd.mod (2.7 KB)
+Extracting: E:\boot\grub\i386-pc\part_dfly.mod (1.7 KB)
+Extracting: E:\boot\grub\i386-pc\part_dvh.mod (1.4 KB)
+Extracting: E:\boot\grub\i386-pc\part_gpt.mod (2.3 KB)
+Extracting: E:\boot\grub\i386-pc\part_msdos.mod (2.3 KB)
+Extracting: E:\boot\grub\i386-pc\part_plan.mod (1.8 KB)
+Extracting: E:\boot\grub\i386-pc\part_sun.mod (1.5 KB)
+Extracting: E:\boot\grub\i386-pc\part_sunpc.mod (1.6 KB)
+Extracting: E:\boot\grub\i386-pc\partmap.lst (111 bytes)
+Extracting: E:\boot\grub\i386-pc\parttool.lst (17 bytes)
+Extracting: E:\boot\grub\i386-pc\parttool.mod (4.5 KB)
+Extracting: E:\boot\grub\i386-pc\password.mod (1.9 KB)
+Extracting: E:\boot\grub\i386-pc\password_pbkdf2.mod (2.7 KB)
+Extracting: E:\boot\grub\i386-pc\pata.mod (4.7 KB)
+Extracting: E:\boot\grub\i386-pc\pbkdf2.mod (1.4 KB)
+Extracting: E:\boot\grub\i386-pc\pbkdf2_test.mod (2.2 KB)
+Extracting: E:\boot\grub\i386-pc\pci.mod (1.4 KB)
+Extracting: E:\boot\grub\i386-pc\pcidump.mod (2.4 KB)
+Extracting: E:\boot\grub\i386-pc\plan9.mod (6.1 KB)
+Extracting: E:\boot\grub\i386-pc\play.mod (2.4 KB)
+Extracting: E:\boot\grub\i386-pc\png.mod (7.2 KB)
+Extracting: E:\boot\grub\i386-pc\priority_queue.mod (1.5 KB)
+Extracting: E:\boot\grub\i386-pc\probe.mod (2.6 KB)
+Extracting: E:\boot\grub\i386-pc\procfs.mod (2.1 KB)
+Extracting: E:\boot\grub\i386-pc\progress.mod (2 KB)
+Extracting: E:\boot\grub\i386-pc\pxe.mod (3.7 KB)
+Extracting: E:\boot\grub\i386-pc\pxechain.mod (2.6 KB)
+Extracting: E:\boot\grub\i386-pc\raid5rec.mod (1.4 KB)
+Extracting: E:\boot\grub\i386-pc\raid6rec.mod (2.1 KB)
+Extracting: E:\boot\grub\i386-pc\read.mod (1.4 KB)
+Extracting: E:\boot\grub\i386-pc\reboot.mod (1.7 KB)
+Extracting: E:\boot\grub\i386-pc\regexp.mod (50.0 KB)
+Extracting: E:\boot\grub\i386-pc\reiserfs.mod (8.7 KB)
+Extracting: E:\boot\grub\i386-pc\relocator.mod (14.6 KB)
+Extracting: E:\boot\grub\i386-pc\romfs.mod (4.1 KB)
+Extracting: E:\boot\grub\i386-pc\scsi.mod (4.9 KB)
+Extracting: E:\boot\grub\i386-pc\search.mod (3.6 KB)
+Extracting: E:\boot\grub\i386-pc\search_fs_file.mod (3.2 KB)
+Extracting: E:\boot\grub\i386-pc\search_fs_uuid.mod (3.1 KB)
+Extracting: E:\boot\grub\i386-pc\search_label.mod (3.1 KB)
+Extracting: E:\boot\grub\i386-pc\sendkey.mod (6.9 KB)
+Extracting: E:\boot\grub\i386-pc\serial.mod (7.6 KB)
+Extracting: E:\boot\grub\i386-pc\setjmp.mod (706 bytes)
+Extracting: E:\boot\grub\i386-pc\setjmp_test.mod (1.7 KB)
+Extracting: E:\boot\grub\i386-pc\setpci.mod (5.3 KB)
+Extracting: E:\boot\grub\i386-pc\sfs.mod (5 KB)
+Extracting: E:\boot\grub\i386-pc\signature_test.mod (6.3 KB)
+Extracting: E:\boot\grub\i386-pc\sleep.mod (2.2 KB)
+Extracting: E:\boot\grub\i386-pc\sleep_test.mod (2.3 KB)
+Extracting: E:\boot\grub\i386-pc\spkmodem.mod (2 KB)
+Extracting: E:\boot\grub\i386-pc\squash4.mod (6.7 KB)
+Extracting: E:\boot\grub\i386-pc\syslinuxcfg.mod (17.1 KB)
+Extracting: E:\boot\grub\i386-pc\tar.mod (3.3 KB)
+Extracting: E:\boot\grub\i386-pc\terminal.lst (202 bytes)
+Extracting: E:\boot\grub\i386-pc\terminal.mod (4.4 KB)
+Extracting: E:\boot\grub\i386-pc\terminfo.mod (11.4 KB)
+Extracting: E:\boot\grub\i386-pc\test.mod (5 KB)
+Extracting: E:\boot\grub\i386-pc\test_blockarg.mod (1.3 KB)
+Extracting: E:\boot\grub\i386-pc\testload.mod (2.6 KB)
+Extracting: E:\boot\grub\i386-pc\testspeed.mod (2.3 KB)
+Extracting: E:\boot\grub\i386-pc\tftp.mod (5.2 KB)
+Extracting: E:\boot\grub\i386-pc\tga.mod (4.3 KB)
+Extracting: E:\boot\grub\i386-pc\time.mod (1.5 KB)
+Extracting: E:\boot\grub\i386-pc\tr.mod (2.3 KB)
+Extracting: E:\boot\grub\i386-pc\trig.mod (1.7 KB)
+Extracting: E:\boot\grub\i386-pc\true.mod (1.2 KB)
+Extracting: E:\boot\grub\i386-pc\truecrypt.mod (3.5 KB)
+Extracting: E:\boot\grub\i386-pc\udf.mod (7.6 KB)
+Extracting: E:\boot\grub\i386-pc\ufs1.mod (5.3 KB)
+Extracting: E:\boot\grub\i386-pc\ufs1_be.mod (5.8 KB)
+Extracting: E:\boot\grub\i386-pc\ufs2.mod (5.4 KB)
+Extracting: E:\boot\grub\i386-pc\uhci.mod (6.5 KB)
+Extracting: E:\boot\grub\i386-pc\usb.mod (10.5 KB)
+Extracting: E:\boot\grub\i386-pc\usb_keyboard.mod (3.8 KB)
+Extracting: E:\boot\grub\i386-pc\usbms.mod (6.9 KB)
+Extracting: E:\boot\grub\i386-pc\usbserial_common.mod (2 KB)
+Extracting: E:\boot\grub\i386-pc\usbserial_ftdi.mod (2.3 KB)
+Extracting: E:\boot\grub\i386-pc\usbserial_pl2303.mod (2.6 KB)
+Extracting: E:\boot\grub\i386-pc\usbserial_usbdebug.mod (1.5 KB)
+Extracting: E:\boot\grub\i386-pc\usbtest.mod (3.5 KB)
+Extracting: E:\boot\grub\i386-pc\vbe.mod (9.7 KB)
+Extracting: E:\boot\grub\i386-pc\verify.mod (11.4 KB)
+Extracting: E:\boot\grub\i386-pc\vga.mod (4.9 KB)
+Extracting: E:\boot\grub\i386-pc\vga_text.mod (2.1 KB)
+Extracting: E:\boot\grub\i386-pc\video.lst (33 bytes)
+Extracting: E:\boot\grub\i386-pc\video.mod (6 KB)
+Extracting: E:\boot\grub\i386-pc\video_bochs.mod (5.6 KB)
+Extracting: E:\boot\grub\i386-pc\video_cirrus.mod (5.9 KB)
+Extracting: E:\boot\grub\i386-pc\video_colors.mod (5.6 KB)
+Extracting: E:\boot\grub\i386-pc\video_fb.mod (22.8 KB)
+Extracting: E:\boot\grub\i386-pc\videoinfo.mod (3.9 KB)
+Extracting: E:\boot\grub\i386-pc\videotest.mod (4.1 KB)
+Extracting: E:\boot\grub\i386-pc\videotest_checksum.mod (2.3 KB)
+Extracting: E:\boot\grub\i386-pc\xfs.mod (6 KB)
+Extracting: E:\boot\grub\i386-pc\xnu.mod (26.7 KB)
+Extracting: E:\boot\grub\i386-pc\xnu_uuid.mod (2.1 KB)
+Extracting: E:\boot\grub\i386-pc\xnu_uuid_test.mod (2.0 KB)
+Extracting: E:\boot\grub\i386-pc\xzio.mod (15.5 KB)
+Extracting: E:\boot\grub\i386-pc\zfs.mod (38.5 KB)
+Extracting: E:\boot\grub\i386-pc\zfscrypt.mod (5.3 KB)
+Extracting: E:\boot\grub\i386-pc\zfsinfo.mod (6.4 KB)
+Extracting: E:\boot.catalog (2 KB)
+Finalizing, please wait...
+Created: E:autorun.inf
+Created: E:autorun.ico
+
+Found USB 2.0 device 'QUMO QUMO USB Device' (8644:8003)
+Using 'autorun.inf' label for drive E: 'CDROM'
+1 device found
+Disk type: Removable, Disk size: 8 ГБ, Sector size: 512 bytes
+Cylinders: 975, Tracks per cylinder: 255, Sectors per track: 63
+Partition type: MBR, NB Partitions: 1
+Disk ID: 0x158DA5F1
+Drive has a Grub 2.0 Master Boot Record
+Partition 1:
+  Type: FAT32 LBA (0x0c)
+  Detected File System: FAT32
+  Size: 7.5 GB (8021606400 bytes)
+  Start Sector: 2048, Boot: Yes
