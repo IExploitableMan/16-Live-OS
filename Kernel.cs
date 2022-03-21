@@ -10,16 +10,15 @@ namespace OS
 
 		protected override void BeforeRun()
 		{
-
+			Command[] commands =
+			{
+                new Command("помогите", "Даёт никому не нужную помощь", new List<string> { "хелп" }),
+			};
 		}
 
 		protected override void Run()
 		{
-			Command[] commands =
-			{
-				new Command("помогите", "Даёт никому не нужную помощь", new List<string> { "хелп" }),
-			};
-			Console.Write("Загруженно.");
+            Console.Write("Загруженно.");
 		}
 	}
 
