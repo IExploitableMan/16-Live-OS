@@ -9,13 +9,14 @@ Localization set to 'ru-RU'
 Notice: The ISO download feature has been deactivated because 'Check for updates' is disabled in your settings.
 NOTE: The Russian (Русский) translation requires an update, but the current translator hasn't submitted one. Because of this, some messages will only be displayed in English.
 If you think you can help update this translation, please e-mail the author of this application
+0 devices found
 Found USB 2.0 device 'QUMO QUMO USB Device' (8644:8003)
 Using 'autorun.inf' label for drive E: 'CDROM'
 1 device found
 Disk type: Removable, Disk size: 8 ГБ, Sector size: 512 bytes
 Cylinders: 975, Tracks per cylinder: 255, Sectors per track: 63
 Partition type: MBR, NB Partitions: 1
-Disk ID: 0x1571DFD6
+Disk ID: 0x1580EA9B
 Drive has a Grub 2.0 Master Boot Record
 Partition 1:
   Type: FAT32 LBA (0x0c)
@@ -32,7 +33,7 @@ ISO label: 'CDROM'
   Size: 24.4 МБ (Projected)
   Uses: GRUB2
 Using image: OS.iso (24.8 МБ)
-Will reuse 'core.img' from 'C:\Users\79315\Downloads\Rufus\grub-2.02~beta2-9\' for Grub 2.x installation
+Will reuse 'core.img' from 'C:\Users\79315\Desktop\OS\bin\Debug\net5.0\Rufus\grub-2.02~beta2-9\' for Grub 2.x installation
 
 Format operation started
 Requesting disk access...
@@ -56,21 +57,21 @@ Partition is already FAT32 LBA...
 Set bootable USB partition as 0x80
 Using Grub 2.0 MBR
 Writing Grub 2.0 SBR (from download) ✓
-Found volume \\?\Volume{2f7afbf9-a92d-11ec-96d3-12c5471ea65a}\
-Notice: Volume Device Path is \Device\HarddiskVolume11
-Waiting for access on \\?\Volume{2f7afbf9-a92d-11ec-96d3-12c5471ea65a}...
+Found volume \\?\Volume{2f7b0452-a92d-11ec-96d3-12c5471ea65a}\
+Notice: Volume Device Path is \Device\HarddiskVolume12
+Waiting for access on \\?\Volume{2f7b0452-a92d-11ec-96d3-12c5471ea65a}...
 Warning: Could not obtain exclusive rights. Retrying with write sharing enabled...
-WARNING: The following process(es) or service(s) are accessing \Device\HarddiskVolume11:
+WARNING: The following process(es) or service(s) are accessing \Device\HarddiskVolume12:
 ● [005332] C:\Windows\Explorer.EXE (r)
 You should close these applications before attempting to reformat the drive.
-Opened \\?\Volume{2f7afbf9-a92d-11ec-96d3-12c5471ea65a} for shared write access
+Opened \\?\Volume{2f7b0452-a92d-11ec-96d3-12c5471ea65a} for shared write access
 Writing Partition Boot Record...
 Using Standard FAT32 partition boot record
 Confirmed new volume has a primary FAT32 boot sector
 Setting primary FAT32 boot sector for boot...
 Confirmed new volume has a secondary FAT32 boot sector
 Setting secondary FAT32 boot sector for boot...
-Successfully remounted \\?\Volume{2f7afbf9-a92d-11ec-96d3-12c5471ea65a}\ as E:
+Successfully remounted \\?\Volume{2f7b0452-a92d-11ec-96d3-12c5471ea65a}\ as E:
 Extracting files...
 Image is an ISO9660 image
 This image will be extracted using Joliet extensions (if present)
@@ -357,7 +358,7 @@ Using 'autorun.inf' label for drive E: 'CDROM'
 Disk type: Removable, Disk size: 8 ГБ, Sector size: 512 bytes
 Cylinders: 975, Tracks per cylinder: 255, Sectors per track: 63
 Partition type: MBR, NB Partitions: 1
-Disk ID: 0x1580EA9B
+Disk ID: 0x158DA5F1
 Drive has a Grub 2.0 Master Boot Record
 Partition 1:
   Type: FAT32 LBA (0x0c)
