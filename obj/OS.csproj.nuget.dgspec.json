@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\79315\\Desktop\\OS\\OS.csproj": {}
+    "C:\\Files\\Projects\\OS\\OS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\79315\\Desktop\\OS\\OS.csproj": {
+    "C:\\Files\\Projects\\OS\\OS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\79315\\Desktop\\OS\\OS.csproj",
+        "projectUniqueName": "C:\\Files\\Projects\\OS\\OS.csproj",
         "projectName": "OS",
-        "projectPath": "C:\\Users\\79315\\Desktop\\OS\\OS.csproj",
-        "packagesPath": "C:\\Users\\79315\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\79315\\Desktop\\OS\\obj\\",
+        "projectPath": "C:\\Files\\Projects\\OS\\OS.csproj",
+        "packagesPath": "C:\\Users\\pytho\\.nuget\\packages\\",
+        "outputPath": "C:\\Files\\Projects\\OS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\79315\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pytho\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\Cosmos User Kit\\packages\\": {},
+          "C:\\Users\\pytho\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -78,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

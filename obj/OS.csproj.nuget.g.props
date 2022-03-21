@@ -5,20 +5,17 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\79315\.nuget\packages\</NuGetPackageFolders>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\pytho\.nuget\packages\</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.11.1</NuGetToolVersion>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.1.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="C:\Users\79315\.nuget\packages\" />
+    <SourceRoot Include="C:\Users\pytho\.nuget\packages\" />
   </ItemGroup>
-  <PropertyGroup>
-    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
-  </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)cosmos.build\0.1.0-localbuild20220209054635\build\Cosmos.Build.props" Condition="Exists('$(NuGetPackageRoot)cosmos.build\0.1.0-localbuild20220209054635\build\Cosmos.Build.props')" />
+    <Import Project="$(NuGetPackageRoot)cosmos.build\0.1.0-localbuild20220321031506\build\Cosmos.Build.props" Condition="Exists('$(NuGetPackageRoot)cosmos.build\0.1.0-localbuild20220321031506\build\Cosmos.Build.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgCosmos_Build Condition=" '$(PkgCosmos_Build)' == '' ">C:\Users\79315\.nuget\packages\cosmos.build\0.1.0-localbuild20220209054635</PkgCosmos_Build>
+    <PkgCosmos_Build Condition=" '$(PkgCosmos_Build)' == '' ">C:\Users\pytho\.nuget\packages\cosmos.build\0.1.0-localbuild20220321031506</PkgCosmos_Build>
   </PropertyGroup>
 </Project>
