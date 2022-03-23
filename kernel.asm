@@ -8,12 +8,18 @@ loop:
 	;печатаем строку приглашение
 	mov bl, 0000_1111b
 	mov cx, invite_string_end - invite_string
-	mov dh, 00h
 	mov dl, 00h
 	mov bp, invite_string
 	call print
-	call read_key ;теперь в al есть символ
 
+	call read_key
+
+	mov dl, 4h
+	mov cx, 1h
+	mov bp, input_char
+	call print
+
+	call carriage_return
 
 jmp loop
 
@@ -25,6 +31,8 @@ invite_string db ">>> ", 0
 invite_string_end: ;чтобы найти длинну строки
 
 line_number db 0
+input_char db 0
+
 
 help_command db 86 ;h в формате ascii
 
@@ -42,6 +50,9 @@ print:
 	pop es
 	;bp - строка
 	int 10h
+	ret
+
+carriage_return:
 	mov ah, 1
 	add [line_number], ah
 	ret
@@ -67,4 +78,5 @@ clear:
 read_key:
 	mov ah, 0h
 	int 16h
+	mov [input_char], al
 	ret
