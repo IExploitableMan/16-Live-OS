@@ -51,7 +51,7 @@ help_command_key db 68h ;h в формате ascii
 help_command_string db "List of CMDs", 13, 10, "h => shows this message", 13, 10, "s => shutdown your system", 0
 help_command_string_end:
 
-shut_command_key db 115 ;s в формате ascii
+shut_command_key db 73р ;s в формате ascii
 
 
 ;...и функции
