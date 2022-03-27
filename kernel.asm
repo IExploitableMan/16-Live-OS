@@ -47,7 +47,7 @@ line_number db 0
 input_char db 0
 
 ;буква команды + текст вывода
-help_command_key db 84 ;h в формате ascii
+help_command_key db 68h ;h в формате ascii
 help_command_string db "List of CMDs", 13, 10, "h => shows this message", 13, 10, "s => shutdown your system", 0
 help_command_string_end:
 
