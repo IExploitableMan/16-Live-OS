@@ -1,3 +1,5 @@
+org 7C00h
+
 ;16 битный режим
 [BITS 16]
 
@@ -89,7 +91,7 @@ is_it_last_line:
 
 clear:
 	mov ah, 00h
-	mov al, 13h
+	mov al, 03h
 	int 10h
 	ret
 
@@ -114,3 +116,6 @@ cmd_help:
 cmd_shut:
 	hlt ;интересно чо буит с компом если так завершить ос?))
 	ret
+
+times 510 - ($ - $$) db 0
+db 0x55, 0xAA
