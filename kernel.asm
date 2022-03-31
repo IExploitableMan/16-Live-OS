@@ -1,11 +1,3 @@
-org 7C00h
-
-;16 битный режим
-[BITS 16]
-
-;очищаем экран
-call clear
-
 ; 0 Black
 ; 1 Blue
 ; 2 Green
@@ -25,6 +17,12 @@ call clear
 ; пример: 02h
 ; зелёный текст на чёрном фоне
 
+[BITS 16]
+
+org 7C00h
+
+call clear
+
 loop:
 	;печатаем строку приглашение
 	mov bl, 02h
@@ -34,38 +32,36 @@ loop:
 	call print
 
 	call get_input
+	call carriage_return
 
 	jmp loop
 
-	call read_key
+	; call read_key
 
-	call carriage_return
+	; call carriage_return
 
-	mov ah, 68h ;h
-	cmp al, ah
-	je _help_command
+	; cmp al, 68h ;h
+	; je _help_command
 
-	mov ah, 73h ;s
-	cmp al, ah
-	je _shut_command
+	; cmp al, 73h ;s
+	; je _shut_command
 
-	mov ah, 74h ;t
-	cmp al, ah
-	je _test_command
+	; cmp al, 74h ;t
+	; je _test_command
 
 	; jmp loop
 
-	_test_command:
-		call cmd_test
-		jmp loop
+	; _test_command:
+	; 	call cmd_test
+	; 	jmp loop
 
-	_help_command:
-		call cmd_help
-		jmp loop
+	; _help_command:
+	; 	call cmd_help
+	; 	jmp loop
 
-	_shut_command:
-		call cmd_shut
-		jmp loop
+	; _shut_command:
+	; 	call cmd_shut
+	; 	jmp loop
 
 ;ниже заморозки можно разместить данные...
 invite_string db ">>> ", 0
@@ -121,48 +117,47 @@ clear:
 	ret
 
 get_input:
-	mov bx, 0                 ; инициализируем bx как индекс для хранения ввода
+	mov bx, 0             ; инициализируем bx как индекс для хранения ввода
 
 input_processing:
-	mov ah, 0x0               ; параметр для вызова 0x16
-	int 0x16                  ; получаем ASCII код
+	mov ah, 00h           ; параметр для вызова 0x16
+	int 16h               ; получаем ASCII код
 
-	cmp al, 0x0d              ; если нажали enter
-	je check_the_input        ; то вызываем функцию, в которой проверяем, какое
-							  ; слово было введено
+	cmp al, 0dh           ; если нажали enter
+	je check_the_input    ; то вызываем функцию, в которой проверяем, какое
+						  ; слово было введено
 
-	cmp al, 0x8               ; если нажали backspace
+	cmp al, 08h           ; если нажали backspace
 	je backspace_pressed
 
-	mov ah, 0x0e              ; во всех противных случаях - просто печатаем
-							  ; очередной символ из ввода
-	int 0x10
+	mov ah, 0eh           ; во всех противных случаях - просто печатаем
+	int 10h               ; очередной символ из ввода
 
-	mov [input+bx], al        ; и сохраняем его в буффер ввода
-	inc bx                    ; увеличиваем индекс
+	mov [input+bx], al    ; и сохраняем его в буффер ввода
+	inc bx                ; увеличиваем индекс
 
-	cmp bx, 64                ; если input переполнен
-	je check_the_input        ; то ведем себя так, будто был нажат enter
+	cmp bx, 64            ; если input переполнен
+	je check_the_input    ; то ведем себя так, будто был нажат enter
 
-	jmp input_processing      ; и идем заново
+	jmp input_processing  ; и идем заново
 
 backspace_pressed:
-	cmp bx, 0                 ; если backspace нажат, но input пуст, то
-	je input_processing       ; ничего не делаем
+	cmp bx, 0             ; если backspace нажат, но input пуст, то
+	je input_processing   ; ничего не делаем
 
-	mov ah, 0x0e              ; печатаем backspace. это значит, что каретка
-	int 0x10                  ; просто передвинется назад, но сам символ не сотрется
+	mov ah, 0x0e          ; печатаем backspace. это значит, что каретка
+	int 0x10              ; просто передвинется назад, но сам символ не сотрется
 
-	mov al, ' '               ; поэтому печатаем пробел на том месте, куда
-	int 0x10                  ; встала каретка
+	mov al, ' '           ; поэтому печатаем пробел на том месте, куда
+	int 0x10              ; встала каретка
 
-	mov al, 0x8               ; пробел передвинет каретку в изначальное положение
-	int 0x10                  ; поэтому еще раз печатаем backspace
+	mov al, 0x8           ; пробел передвинет каретку в изначальное положение
+	int 0x10              ; поэтому еще раз печатаем backspace
 
 	dec bx
-	mov byte [input+bx], 0    ; и убираем из input последний символ
+	mov byte [input+bx], 0; и убираем из input последний символ
 
-	jmp input_processing      ; и возвращаемся обратно
+	jmp input_processing  ; и возвращаемся обратно
 
 check_the_input:
 	ret
