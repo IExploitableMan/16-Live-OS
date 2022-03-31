@@ -6,32 +6,64 @@ org 7C00h
 ;очищаем экран
 call clear
 
+; 0 - Black
+; 1 - Blue
+; 2 - Green
+; 3 - Cyan
+; 4 - Red
+; 5 - Magenta
+; 6 - Brown
+; 7 - Light Grey
+; 8 - Dark Grey
+; 9 - Light Blue
+; a - Light Green
+; b - Light Cyan
+; c - Light Red
+; d - Light Magenta
+; e - Light Brown
+; f – White.
+; пример: 02h
+; зелёный текст на чёрном фоне
+
 loop:
 	;печатаем строку приглашение
-	mov bl, 0000_1111b
+	mov bl, 02h
 	mov cx, invite_string_end - invite_string
 	mov dl, 00h
 	mov bp, invite_string
 	call print
 
-	call read_key
+	call read_string
 
-	mov dl, invite_string_end - invite_string - 01h
-	mov cx, 01h
-	mov bp, input_char
+	mov bl, 02h
+	mov cx, string_end - string
+	mov dl, invite_string_end - invite_string
+	mov bp, string
 	call print
+
+	jmp loop
+
+	call read_key
 
 	call carriage_return
 
-	mov ah, [input_char]
-
-	cmp ah, [help_command_key]
+	mov ah, 68h ;h
+	cmp al, ah
 	je _help_command
 
-	cmp ah, [shut_command_key]
+	mov ah, 73h ;s
+	cmp al, ah
 	je _shut_command
 
-	jmp loop
+	mov ah, 74h ;t
+	cmp al, ah
+	je _test_command
+
+	; jmp loop
+
+	_test_command:
+		call cmd_test
+		jmp loop
 
 	_help_command:
 		call cmd_help
@@ -46,15 +78,12 @@ invite_string db ">>> ", 0
 invite_string_end: ;чтобы найти длинну строки
 
 line_number db 0
-input_char db 0
 
-;буква команды + текст вывода
-help_command_key db 68h ;h в формате ascii
 help_command_string db "List of CMDs", 13, 10, "h => shows this message", 13, 10, "s => shutdown your system", 0
 help_command_string_end:
 
-shut_command_key db 73р ;s в формате ascii
-
+test_command_string db "abcdefghijklmnopqrstuvwxyz", 0
+test_command_string_end:
 
 ;...и функции
 print:
@@ -73,7 +102,7 @@ print:
 	ret
 
 carriage_return:
-	mov ah, 01h
+	mov ah, 1
 	add [line_number], ah
 	ret
 
@@ -95,10 +124,25 @@ clear:
 	int 10h
 	ret
 
+read_string:
+	string db ""
+	string_end:
+
+	_loop:
+		call read_key
+		mov ah, 0dh ;\t (Enter)
+		cmp al, ah
+		je __end
+
+		add [string], al
+		jmp _loop
+
+		__end:
+			ret
+
 read_key:
 	mov ah, 00h
 	int 16h
-	mov [input_char], al
 	ret
 
 cmd_help:
@@ -115,6 +159,15 @@ cmd_help:
 
 cmd_shut:
 	hlt ;интересно чо буит с компом если так завершить ос?))
+	ret
+
+cmd_test:
+	mov cx, test_command_string_end - test_command_string
+	mov bl, 02h
+	mov dl, 00h
+	mov bp, test_command_string
+	call print
+	call carriage_return
 	ret
 
 times 510 - ($ - $$) db 0
