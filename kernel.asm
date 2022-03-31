@@ -67,7 +67,7 @@ help_command_name db "help"
 help_command_string db "List of CMDs", 13, 10, "h => shows this message", 13, 10, "s => shutdown your system", 0
 help_command_string_end:
 
-input: times 32 db 0
+input db ""
 
 ;...и функции
 print:
