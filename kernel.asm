@@ -6,22 +6,22 @@ org 7C00h
 ;очищаем экран
 call clear
 
-; 0 - Black
-; 1 - Blue
-; 2 - Green
-; 3 - Cyan
-; 4 - Red
-; 5 - Magenta
-; 6 - Brown
-; 7 - Light Grey
-; 8 - Dark Grey
-; 9 - Light Blue
-; a - Light Green
-; b - Light Cyan
-; c - Light Red
-; d - Light Magenta
-; e - Light Brown
-; f – White.
+; 0 Black
+; 1 Blue
+; 2 Green
+; 3 Cyan
+; 4 Red
+; 5 Magenta
+; 6 Brown
+; 7 Light Grey
+; 8 Dark Grey
+; 9 Light Blue
+; a Light Green
+; b Light Cyan
+; c Light Red
+; d Light Magenta
+; e Light Brown
+; f – White
 ; пример: 02h
 ; зелёный текст на чёрном фоне
 
@@ -33,13 +33,7 @@ loop:
 	mov bp, invite_string
 	call print
 
-	call read_string
-
-	mov bl, 02h
-	mov cx, string_end - string
-	mov dl, invite_string_end - invite_string
-	mov bp, string
-	call print
+	call get_input
 
 	jmp loop
 
@@ -85,6 +79,8 @@ help_command_string_end:
 test_command_string db "abcdefghijklmnopqrstuvwxyz", 0
 test_command_string_end:
 
+input: times 64 db 0
+
 ;...и функции
 print:
 	call is_it_last_line
@@ -124,21 +120,52 @@ clear:
 	int 10h
 	ret
 
-read_string:
-	string db ""
-	string_end:
+get_input:
+	mov bx, 0                 ; инициализируем bx как индекс для хранения ввода
 
-	_loop:
-		call read_key
-		mov ah, 0dh ;\t (Enter)
-		cmp al, ah
-		je __end
+input_processing:
+	mov ah, 0x0               ; параметр для вызова 0x16
+	int 0x16                  ; получаем ASCII код
 
-		add [string], al
-		jmp _loop
+	cmp al, 0x0d              ; если нажали enter
+	je check_the_input        ; то вызываем функцию, в которой проверяем, какое
+							  ; слово было введено
 
-		__end:
-			ret
+	cmp al, 0x8               ; если нажали backspace
+	je backspace_pressed
+
+	mov ah, 0x0e              ; во всех противных случаях - просто печатаем
+							  ; очередной символ из ввода
+	int 0x10
+
+	mov [input+bx], al        ; и сохраняем его в буффер ввода
+	inc bx                    ; увеличиваем индекс
+
+	cmp bx, 64                ; если input переполнен
+	je check_the_input        ; то ведем себя так, будто был нажат enter
+
+	jmp input_processing      ; и идем заново
+
+backspace_pressed:
+	cmp bx, 0                 ; если backspace нажат, но input пуст, то
+	je input_processing       ; ничего не делаем
+
+	mov ah, 0x0e              ; печатаем backspace. это значит, что каретка
+	int 0x10                  ; просто передвинется назад, но сам символ не сотрется
+
+	mov al, ' '               ; поэтому печатаем пробел на том месте, куда
+	int 0x10                  ; встала каретка
+
+	mov al, 0x8               ; пробел передвинет каретку в изначальное положение
+	int 0x10                  ; поэтому еще раз печатаем backspace
+
+	dec bx
+	mov byte [input+bx], 0    ; и убираем из input последний символ
+
+	jmp input_processing      ; и возвращаемся обратно
+
+check_the_input:
+	ret
 
 read_key:
 	mov ah, 00h
