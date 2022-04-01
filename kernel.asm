@@ -24,7 +24,7 @@ org 7C00h
 call clear
 
 loop:
-	;печатаем строку приглашение
+	; строка инпута
 	mov bl, 02h
 	mov cx, invite_string_end - invite_string
 	mov dl, 00h
@@ -36,6 +36,8 @@ loop:
 	mov ah, 1
 	call return
 
+
+	; команды
 	mov ah, [input] ; что-то тут не так...
 	cmp ah, [help_command_name] ; не срабатывает условие
 	je cmd_help
@@ -58,7 +60,7 @@ loop:
 		ret ;зависнет(
 
 ;ниже заморозки можно разместить данные...
-invite_string db ">>> ", 0
+invite_string db ">>> "
 invite_string_end: ;чтобы найти длинну строки
 
 line_number db 0
@@ -68,6 +70,7 @@ help_command_string db "List of CMDs", 13, 10, "h => shows this message", 13, 10
 help_command_string_end:
 
 input db ""
+input_end:
 
 ;...и функции
 print:
@@ -150,6 +153,8 @@ backspace_pressed:
 	jmp input_processing  ; и возвращаемся обратно
 
 check_the_input:
+	cmp bx, 0             ; если enter нажат, но input пуст
+	je input_processing
 	ret
 
 read_key:
