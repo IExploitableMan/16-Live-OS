@@ -2,55 +2,19 @@
 [ORG 7e00h]
 
 call clear
-
-loop:
-	; строка инпута
-	mov bl, 02h
-	mov cx, invite_string_end - invite_string
-	mov dl, 00h
-	mov bp, invite_string
-	call print
-
-	call get_input
-
-	mov ah, 1
-	call return
-
-
-	; команды
-	mov ah, [input] ; что-то тут не так...
-	cmp ah, [help_command_name] ; не срабатывает условие
-	je cmd_help
-
-	jmp loop
-
-	cmd_help:
-		mov cx, help_command_string_end - help_command_string
-		mov dl, 00h
-		mov bp, help_command_string
-		call print
-
-		mov ah, 3
-		call return
-
-		jmp loop
-
-	cmd_shut:
-		hlt ;интересно чо буит с компом если так завершить ос?))
-		ret ;зависнет(
+jmp main
 
 ;ниже заморозки можно разместить данные...
 invite_string db ">>> "
-invite_string_end: ;чтобы найти длинну строки
+.end: ;чтобы найти длинну строки
 
 line_number db 0
 
-help_command_name db "help"
 help_command_string db "List of CMDs", 13, 10, "h => shows this message", 13, 10, "s => shutdown your system", 0
-help_command_string_end:
+.end:
 
-input db ""
-input_end:
+input times 32 db 0
+.end:
 
 ;...и функции
 print:
@@ -137,10 +101,35 @@ check_the_input:
 	je input_processing
 	ret
 
-read_key:
-	mov ah, 00h
-	int 16h
-	ret
+main:
+	; строка инпута
+	mov bl, 02h
+	mov cx, invite_string_end - invite_string
+	mov dl, 00h
+	mov bp, invite_string
+	call print
+
+	call get_input
+
+	mov ah, 1
+	call return
+
+	jmp main
+
+	cmd_help:
+		mov cx, help_command_string_end - help_command_string
+		mov dl, 00h
+		mov bp, help_command_string
+		call print
+
+		mov ah, 3
+		call return
+
+		jmp main
+
+	cmd_shut:
+		hlt ;интересно чо буит с компом если так завершить ос?))
+		ret ;зависнет(
 
 times 510 - ($ - $$) db 0
 ; db 0x55, 0xAAs

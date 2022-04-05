@@ -39,7 +39,7 @@
 ; +----+----+----+----+----+----+----+
 
 [BITS 16]
-[ORG 7c00h]
+[ORG 200h]
 
 xor ax, ax    ; make sure ds is set to 0
 mov ds, ax
