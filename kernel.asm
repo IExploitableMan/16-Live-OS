@@ -10,6 +10,7 @@ invite_string db ">>> "
 
 line_number db 0
 
+help_command_name db "help",0
 help_command_string db "List of CMDs", 13, 10, "h => shows this message", 13, 10, "s => shutdown your system", 0
 .end:
 
@@ -26,8 +27,8 @@ print:
 	;cx - длина строки
 	mov dh, [line_number]
 	;dl - колонка
-	push cs
-	pop es
+	; push cs
+	; pop es
 	;bp - строка
 	int 10h
 	ret
@@ -39,14 +40,13 @@ return:
 is_it_last_line:
 	mov ah, 18h
 	cmp [line_number], ah
-	jne _end
+	jb .end
 
 	mov ah, 00h
 	mov [line_number], ah
 	call clear
-
-	_end:
-		ret
+.end:
+	ret
 
 clear:
 	mov ah, 00h
@@ -56,16 +56,15 @@ clear:
 
 get_input:
 	mov bx, 0             ; инициализируем bx как индекс для хранения ввода
-
-input_processing:
+.loop:
 	mov ah, 00h           ; параметр для вызова 0x16
 	int 16h               ; получаем ASCII код
 
 	cmp al, 0dh           ; если нажали enter
-	je check_the_input    ; то вызываем функцию, в которой проверяем
+	je .check             ; то вызываем функцию, в которой проверяем
 
 	cmp al, 08h           ; если нажали backspace
-	je backspace_pressed
+	je .backspace
 
 	mov ah, 0eh           ; во всех противных случаях - просто печатаем
 	int 10h               ; очередной символ из ввода
@@ -74,13 +73,13 @@ input_processing:
 	inc bx                ; увеличиваем индекс
 
 	cmp bx, 32            ; если input переполнен
-	je check_the_input    ; то ведем себя так, будто был нажат enter
+	je .check             ; то ведем себя так, будто был нажат enter
 
-	jmp input_processing  ; и идем заново
+	jmp .loop             ; и идем заново
 
-backspace_pressed:
+.backspace:
 	cmp bx, 0             ; если backspace нажат, но input пуст, то
-	je input_processing   ; ничего не делаем
+	je .loop   ; ничего не делаем
 
 	mov ah, 0x0e          ; печатаем backspace. это значит, что каретка
 	int 10h               ; просто передвинется назад, но сам символ не сотрется
@@ -94,17 +93,21 @@ backspace_pressed:
 	dec bx
 	mov byte [input+bx], 0; и убираем из input последний символ
 
-	jmp input_processing  ; и возвращаемся обратно
+	jmp .loop  ; и возвращаемся обратно
 
-check_the_input:
+.check:
 	cmp bx, 0             ; если enter нажат, но input пуст
-	je input_processing
+	je .loop
+
+	inc bx
+	mov byte [input+bx], 0
 	ret
+
 
 main:
 	; строка инпута
 	mov bl, 02h
-	mov cx, invite_string_end - invite_string
+	mov cx, invite_string.end - invite_string
 	mov dl, 00h
 	mov bp, invite_string
 	call print
@@ -114,12 +117,17 @@ main:
 	mov ah, 1
 	call return
 
+	mov si, [help_command_name]
+    mov bx, [input]
+    cmp si, bx
+    je .cmd_help
+
 	jmp main
 
-	cmd_help:
-		mov cx, help_command_string_end - help_command_string
+	.cmd_help:
+		mov cx, help_command_string.end - help_command_string
 		mov dl, 00h
-		mov bp, help_command_string
+		mov bp, [help_command_string]
 		call print
 
 		mov ah, 3
@@ -127,7 +135,7 @@ main:
 
 		jmp main
 
-	cmd_shut:
+	.cmd_shut:
 		hlt ;интересно чо буит с компом если так завершить ос?))
 		ret ;зависнет(
 
